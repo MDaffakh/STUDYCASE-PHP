@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image and Border Customizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Customize Your Image</h1>
+
+    <div class="controls">
+        <label for="image-select">Choose an image:</label>
+        <select id="image-select">
+            <option value="image1.jpeg">Image 1</option>
+            <option value="image2.jpeg">Image 2</option>
+            <option value="image3.jpeg">Image 3</option>
+        </select>
+
+        <label for="shape-select">Choose a shape:</label>
+        <select id="shape-select">
+            <option value="circle">Circle</option>
+            <option value="square">Square</option>
+            <option value="triangle">Triangle</option>
+        </select>
+
+        <label for="border-color-select">Choose border color:</label>
+        <select id="border-color-select">
+            <option value="red">Red</option>
+            <option value="yellow">Yellow</option>
+            <option value="green">Green</option>
+        </select>
+    </div>
+
+    <div class="image-container">
+        <img id="custom-image" src="image1.jpeg" alt="Custom Image">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

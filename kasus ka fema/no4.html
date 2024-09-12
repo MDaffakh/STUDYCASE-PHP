@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+    <form action="">
+    <div>
+    <label for="jenjang">Jenjang Pendidikan</label>
+        <select id="jenjang" onchange="changeLabel(this)">
+            <option value='sd'>SD</option>
+            <option value='smp'>SMP</option>
+            <option value='sma'>SMA</option>
+        </select>
+    </div>
+
+    <div id="sd-class">
+    <label for="">Tingkat Sekolah SD</label>
+        <select name='tingkat-sekolah'>
+            <option value="pilih">Pilih</option>
+            <option value='1'>Kelas 1</option>
+            <option value='2'>Kelas 2</option>
+            <option value='3'>Kelas 3</option>
+            <option value='4'>Kelas 4</option>
+            <option value='5'>Kelas 5</option>
+            <option value='6'>Kelas 6</option>
+        </select>
+    </div>
+
+    <div id="smp-class" style="display:none;">
+    <label for="">Tingkat Sekolah SMP</label>
+        <select name='tingkat-sekolah'>
+            <option value="pilih">Pilih</option>
+            <option value='7'>Kelas 7</option>
+            <option value='8'>Kelas 8</option>
+            <option value='9'>Kelas 9</option>
+        </select>
+    </div>
+
+<div id="sma-class" style="display:none;">
+<label for="">Tingkat Sekolah SMA</label>
+<select name='tingkat-sekolah'>
+            <option value="pilih">Pilih</option>
+            <option value='10'>Kelas 10</option>
+            <option value='11'>Kelas 11</option>
+            <option value='12'>Kelas 12</option>
+        </select>
+        </div>
+</form>
+
+<script>
+function changeLabel(e){
+document.getElementById("sd-class").style.display = "none";
+document.getElementById("smp-class").style.display = "none";
+document.getElementById("sma-class").style.display = "none";
+
+if (e.value === "sd") {
+document.getElementById("sd-class").style.display = "block";
+} else if (e.value === "smp") {
+document.getElementById("smp-class").style.display = "block";
+} else if (e.value === "sma") {
+document.getElementById("sma-class").style.display = "block";
+}
+};
+</script>
+</body>
+</html>

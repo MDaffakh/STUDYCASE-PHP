@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #masihAdaFields, #meninggalFields {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+        <label for="status">Status Ayah</label><br>
+        <input type="radio" id="ada" name="status" value="ada" onclick="toggleFields()">
+        <label for="ada">Masih Ada</label><br>
+        <input type="radio" id="meninggal" name="status" value="meninggal" onclick="toggleFields()">
+        <label for="meninggal">Meninggal</label><br>
+        <input type="radio" id="tidak" name="status" value="tidak" onclick="toggleFields()">
+        <label for="tidak">Tidak Diketahui</label>
+    </form>
+
+    <div id="masihAdaFields">
+        <label for="pendidikan">Pendidikan Ayah</label>
+        <select name="pendidikan" id="pendidikan">
+            <option value="">Pilih</option>
+            <option value="sd">SD</option>
+            <option value="smp">SMP</option>
+            <option value="sma">SMA</option>
+        </select>
+        <br><br>
+        
+        <label for="pekerjaan">Pekerjaan Ayah</label>
+        <select name="pekerjaan" id="pekerjaan">
+            <option value="">Pilih</option>
+            <option value="pns">PNS</option>
+            <option value="wiraswasta">Wiraswasta</option>
+        </select>
+        <br><br>
+
+        <label for="desc">Deskripsi Pekerjaan Ayah</label>
+        <input type="text" id="desc" name="desc">
+        <br><br>
+
+        <label for="penghasilan">Total Penghasilan Perbulan</label>
+        <input type="text" id="penghasilan" name="penghasilan">
+        <br><br>
+
+        <label for="detailKerja">Detail Ayah Bekerja, Berapa Lama Sudah Bekerja, Kondisi Kesehatan</label>
+        <input type="text" id="detailKerja" name="detailKerja">
+    </div>
+
+    <div id="meninggalFields">
+        <label for="pekerjaan">Pekerjaan Ayah</label>
+        <select name="pekerjaan" id="pekerjaan">
+            <option value="">Pilih</option>
+            <option value="pns">PNS</option>
+            <option value="wiraswasta">Wiraswasta</option>
+        </select>
+        <br><br>
+
+        <label for="desc">Deskripsi Pekerjaan Ayah</label>
+        <input type="text" id="desc" name="desc">
+        <br><br>
+
+        <label for="penghasilan">Total Penghasilan Perbulan</label>
+        <input type="text" id="penghasilan" name="penghasilan">
+        <br><br>
+
+        <label for="detailSemasa">Detail Semasa Hidup</label>
+        <input type="text" id="detailSemasa" name="detailSemasa">
+        <br><br>
+
+        <label for="pendidikan">Pendidikan Ayah</label>
+        <select name="pendidikan" id="pendidikan">
+            <option value="">Pilih</option>
+            <option value="sd">SD</option>
+            <option value="smp">SMP</option>
+            <option value="sma">SMA</option>
+        </select>
+
+
+    <script>
+        function toggleFields() {
+            var status = document.querySelector('input[name="status"]:checked').value;
+            
+            document.getElementById("masihAdaFields").style.display = "none";
+            document.getElementById("meninggalFields").style.display = "none";
+            
+            if (status === "ada") {
+                document.getElementById("masihAdaFields").style.display = "block";
+            } else if (status === "meninggal") {
+                document.getElementById("meninggalFields").style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

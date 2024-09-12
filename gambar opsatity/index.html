@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #gambar {
+            width: 100;
+        }
+    </style>
+    <select name="" id="gambar" onclick="changeGambar(e)">
+        <option value="gambar_1">gambar_1</option>
+        <option value="gambar_2">gambar_2</option>
+        <option value="gambar_3">gambar_3</option>
+    </select>
+    <select name="" id="opasity">
+        <option value="">1</option>
+        <option value="">0.5</option>
+        <option value="">0.2</option>
+    </select>
+    <input type="button" value="kirim" onclick="Submit()">
+
+    <div class="image-container">
+        <img src="img/gambar_1.jpg" alt="selected image" width="300px">
+    </div>
+
+    <script>
+        function changeGambar(e) {
+            document.getElementById (gambar);
+
+            img.src = img.value
+        }
+    </script>
+</body>
+</html>

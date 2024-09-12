@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 40px;
+        }
+        #countdown {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: yellow;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .expired {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hitung Mundur</h1>
+    <div id="countdown">5</div>
+    <br>
+    <button id="startButton" onclick="startCountdown()">Mulai</button>
+    <button id="stopButton" onclick="stopCountdown()" disabled>Berhenti</button>
+    <div id="result"></div>
+
+    <script>
+        let countdown = 5;
+        let interval;
+
+        function startCountdown() {
+            document.getElementById('startButton').disabled = true;
+            document.getElementById('stopButton').disabled = false;
+            document.getElementById('countdown').classList.remove('expired');
+            document.getElementById('countdown').textContent = countdown;
+
+            interval = setInterval(() => {
+                countdown--;
+                document.getElementById('countdown').textContent = countdown;
+
+                if (countdown <= 0) {
+                    clearInterval(interval);
+                    document.getElementById('countdown').textContent = 'Waktu Habis';
+                    document.getElementById('countdown').classList.add('expired');
+                    resetButtons();
+                }
+            }, 1000);
+        }
+
+        function stopCountdown() {
+            clearInterval(interval);
+            resetButtons();
+        }
+
+        function resetButtons() {
+            document.getElementById('startButton').disabled = false;
+            document.getElementById('stopButton').disabled = true;
+            countdown = 5;  
+        }
+
+        function submitDate() {
+            const dateInput = document.getElementById('dateInput').value;
+            const result = document.getElementById('result');
+            result.textContent =`Mencari data tanggal ${dateInput}...`;
+        }
+    </script>
+</body>
+</html>
